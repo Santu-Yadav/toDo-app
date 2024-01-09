@@ -7,11 +7,12 @@ function App() {
   const [dataArray, setDataArray] = useState([]);
   const [checkedIds, setCheckedIds] = useState([]);
   const [selectedColor, setSelectedColor] = useState("0");
+  const [selectedColorBoxArray, setSelectedColorBoxArray] = useState([]);
 
   const handleChange = (e) => {
     const uniqueIdentifier = `${Date.now()}_${Math.random()}`;
-    console.log(uniqueIdentifier);
-    console.log("input #", e.target.value);
+    // console.log(uniqueIdentifier);
+    // console.log("input #", e.target.value);
     setInput({
       id: uniqueIdentifier,
       value: e.target.value,
@@ -19,7 +20,7 @@ function App() {
     });
   };
 
-  console.log("dataArray #", dataArray);
+  // console.log("dataArray #", dataArray);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -68,6 +69,11 @@ function App() {
     );
   };
 
+  const greenBoxSelected = (e) => {
+    console.log("Green box selected", e);
+    setSelectedColorBoxArray((prev) => [...prev, e.target.value]);
+  };
+
   return (
     <div className="appContainer">
       <header className="header">Redux Fundamentals Example</header>
@@ -92,6 +98,7 @@ function App() {
               selectedColor={selectedColor}
               // setSelectedColor={setSelectedColor}
               selectedColorChange={selectedColorChange}
+              selectedColorBoxArray={selectedColorBoxArray}
             />
           </div>
           <div className="footer">
@@ -119,7 +126,12 @@ function App() {
             <div className="box4">
               <span>Filter by Color</span>
               <label>
-                <input type="checkbox" style={{ marginRight: "10px" }} />
+                <input
+                  type="checkbox"
+                  style={{ marginRight: "10px" }}
+                  onChange={greenBoxSelected}
+                  value="green"
+                />
                 <span style={{ color: "green" }}>Green</span>
               </label>
               <label>

@@ -8,12 +8,15 @@ const RenderList = ({
   selectedColor,
   // setSelectedColor,
   selectedColorChange,
+  selectedColorBoxArray,
 }) => {
   return (
     <div>
       {dataArray.map((item) => {
-        if (item.value == " s") {
-          console.log("Inside first if", item.value);
+        if (
+          selectedColorBoxArray.length !== 0 &&
+          !selectedColorBoxArray.includes(item.color)
+        ) {
           return;
         } else {
           return (
