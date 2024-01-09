@@ -28,7 +28,7 @@ function App() {
   };
 
   const handleDelete = (data) => {
-    console.log("Delete clicked #", data);
+    // console.log("Delete clicked #", data);
     const filteredDataArray = dataArray.filter((item) => item.id !== data.id);
     setDataArray(filteredDataArray);
   };
@@ -42,9 +42,7 @@ function App() {
   };
 
   const handleMarkAllCompleted = () => {
-    console.log("Data Array ##", dataArray);
     const arr2 = dataArray.map((item) => item.id);
-    console.log("arr2 ##", arr2);
     setCheckedIds(arr2);
   };
 
@@ -57,16 +55,17 @@ function App() {
         : prevIds.filter((id) => id !== selectedId)
     );
   };
-  console.log("checkedIds #", checkedIds);
+  // console.log("checkedIds #", checkedIds);
 
   /* Do this later, select the color and add segregate the data based on the color selected*/
   const selectedColorChange = (event, item) => {
-    console.log("selectedColorChange #", event.target.value, item);
-    const filterData = dataArray.filter((i) => i.id === item.id);
-    console.log("filterData #", filterData);
-    filterData[0].color = event.target.value;
-    console.log("newArray #", filterData);
-    //setDataArray()
+    setDataArray(
+      dataArray.map((element) =>
+        element.id === item.id
+          ? { ...element, color: event.target.value }
+          : { ...element }
+      )
+    );
   };
 
   return (
