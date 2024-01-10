@@ -69,9 +69,15 @@ function App() {
     );
   };
 
-  const greenBoxSelected = (e) => {
+  const boxSelected = (e) => {
     console.log("Green box selected", e);
-    setSelectedColorBoxArray((prev) => [...prev, e.target.value]);
+
+    setSelectedColorBoxArray((prev) =>
+      e.target.checked
+        ? [...prev, e.target.value]
+        : prev.filter((item) => item !== e.target.value)
+    );
+    console.log("selectedColorBoxArray", selectedColorBoxArray);
   };
 
   return (
@@ -129,25 +135,45 @@ function App() {
                 <input
                   type="checkbox"
                   style={{ marginRight: "10px" }}
-                  onChange={greenBoxSelected}
+                  onChange={boxSelected}
                   value="green"
                 />
                 <span style={{ color: "green" }}>Green</span>
               </label>
               <label>
-                <input type="checkbox" style={{ marginRight: "10px" }} />
+                <input
+                  type="checkbox"
+                  style={{ marginRight: "10px" }}
+                  onChange={boxSelected}
+                  value="red"
+                />
                 <span style={{ color: "red" }}>Red</span>
               </label>
               <label>
-                <input type="checkbox" style={{ marginRight: "10px" }} />
+                <input
+                  type="checkbox"
+                  style={{ marginRight: "10px" }}
+                  onChange={boxSelected}
+                  value="blue"
+                />
                 <span style={{ color: "blue" }}>Bule</span>
               </label>
               <label>
-                <input type="checkbox" style={{ marginRight: "10px" }} />
+                <input
+                  type="checkbox"
+                  style={{ marginRight: "10px" }}
+                  onChange={boxSelected}
+                  value="orange"
+                />
                 <span style={{ color: "orange" }}>Orange</span>
               </label>
               <label>
-                <input type="checkbox" style={{ marginRight: "10px" }} />
+                <input
+                  type="checkbox"
+                  style={{ marginRight: "10px" }}
+                  onChange={boxSelected}
+                  value="purple"
+                />
                 <span style={{ color: "purple" }}>Purple</span>
               </label>
             </div>
