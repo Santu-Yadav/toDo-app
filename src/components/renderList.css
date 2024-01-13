@@ -22,6 +22,43 @@
   background-color: blueviolet;
 }
 
+.selectWrapper {
+  min-width: 120px;
+  position: relative;
+}
+
+.selectClass {
+  width: 90%;
+  appearance: none;
+  padding: 0.1rem;
+  border-radius: 3px;
+}
+
+.selectWrapper::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+  border-top: 0.4rem solid black;
+  border-left: 0.4rem solid transparent;
+  border-right: 0.4rem solid transparent;
+  top: 30%;
+}
+
+/* .selectWrapper::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+} */
+
+/* .selectWrapper::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 55%;
+} */
+
 /* Hide the browser's default checkbox */
 /* .render-list-container input {
   position: absolute;

@@ -6,7 +6,7 @@ function App() {
   const [input, setInput] = useState({});
   const [dataArray, setDataArray] = useState([]);
   const [checkedIds, setCheckedIds] = useState([]);
-  const [selectedColor, setSelectedColor] = useState("0");
+  // const [selectedColor, setSelectedColor] = useState("0");
   const [selectedColorBoxArray, setSelectedColorBoxArray] = useState([]);
 
   const handleChange = (e) => {
@@ -101,7 +101,7 @@ function App() {
               handleDelete={handleDelete}
               handleCheckboxChange={handleCheckboxChange}
               checkedIds={checkedIds}
-              selectedColor={selectedColor}
+              // selectedColor={selectedColor}
               // setSelectedColor={setSelectedColor}
               selectedColorChange={selectedColorChange}
               selectedColorBoxArray={selectedColorBoxArray}

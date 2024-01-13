@@ -5,7 +5,7 @@ const RenderList = ({
   handleDelete,
   handleCheckboxChange,
   checkedIds,
-  selectedColor,
+  // selectedColor,
   // setSelectedColor,
   selectedColorChange,
   selectedColorBoxArray,
@@ -30,45 +30,48 @@ const RenderList = ({
               />
               <div className="item-task">{item.value}</div>
               <div>
-                <select
-                  value={selectedColor}
-                  onChange={(event) => selectedColorChange(event, item)}
-                >
-                  <option value="0">Select car:</option>
-                  <option
-                    value="green"
-                    style={{
-                      color: "green",
-                      fontWeight: "bold",
-                    }}
+                <div className="selectWrapper">
+                  <select
+                    value={item.color}
+                    onChange={(event) => selectedColorChange(event, item)}
+                    className="selectClass"
                   >
-                    Green
-                  </option>
-                  <option
-                    value="red"
-                    style={{ color: "red", fontWeight: "bold" }}
-                  >
-                    Red
-                  </option>
-                  <option
-                    value="blue"
-                    style={{ color: "blue", fontWeight: "bold" }}
-                  >
-                    Blue
-                  </option>
-                  <option
-                    value="orange"
-                    style={{ color: "orange", fontWeight: "bold" }}
-                  >
-                    Orange
-                  </option>
-                  <option
-                    value="purple"
-                    style={{ color: "purple", fontWeight: "bold" }}
-                  >
-                    Purple
-                  </option>
-                </select>
+                    <option value="selectColor">Select color:</option>
+                    <option
+                      value="green"
+                      style={{
+                        color: "green",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Green
+                    </option>
+                    <option
+                      value="red"
+                      style={{ color: "red", fontWeight: "bold" }}
+                    >
+                      Red
+                    </option>
+                    <option
+                      value="blue"
+                      style={{ color: "blue", fontWeight: "bold" }}
+                    >
+                      Blue
+                    </option>
+                    <option
+                      value="orange"
+                      style={{ color: "orange", fontWeight: "bold" }}
+                    >
+                      Orange
+                    </option>
+                    <option
+                      value="purple"
+                      style={{ color: "purple", fontWeight: "bold" }}
+                    >
+                      Purple
+                    </option>
+                  </select>
+                </div>
               </div>
               <button onClick={() => handleDelete(item)}>Delete</button>
             </div>
