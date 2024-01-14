@@ -21,13 +21,16 @@ const RenderList = ({
         } else {
           return (
             <div className="render-list-container" key={item.id}>
-              <input
-                id={item.id}
-                className="input-checkbox"
-                type="checkbox"
-                onChange={handleCheckboxChange}
-                checked={checkedIds.includes(item.id)}
-              />
+              <label className="input-container">
+                <input
+                  className="input-checkbox"
+                  id={item.id}
+                  type="checkbox"
+                  onChange={handleCheckboxChange}
+                  checked={checkedIds.includes(item.id)}
+                />
+                <span className="checkMark"></span>
+              </label>
               <div className="item-task">{item.value}</div>
               <div>
                 <div className="selectWrapper">
