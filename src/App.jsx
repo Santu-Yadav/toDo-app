@@ -1,12 +1,14 @@
 import { useState } from "react";
+
+import MainBody from "./mainBody";
+import Footer from "./footer";
+
 import "./app.css";
-import RenderList from "./components/renderList";
 
 function App() {
   const [input, setInput] = useState({});
   const [dataArray, setDataArray] = useState([]);
   const [checkedIds, setCheckedIds] = useState([]);
-  // const [selectedColor, setSelectedColor] = useState("0");
   const [selectedColorBoxArray, setSelectedColorBoxArray] = useState([]);
 
   const handleChange = (e) => {
@@ -56,7 +58,6 @@ function App() {
         : prevIds.filter((id) => id !== selectedId)
     );
   };
-  // console.log("checkedIds #", checkedIds);
 
   /* Do this later, select the color and add segregate the data based on the color selected*/
   const selectedColorChange = (event, item) => {
@@ -87,97 +88,24 @@ function App() {
         <p className="body-p">Todos</p>
         <div className="body-dashboard">
           <div className="upper-body">
-            <input
-              className="upper-body-input"
-              placeholder="What needs to be done?"
-              value={input.value || " "}
-              onChange={handleChange}
-            />
-            <button className="addButton" onClick={handleClick}>
-              submit
-            </button>
-            <RenderList
+            <MainBody
               dataArray={dataArray}
               handleDelete={handleDelete}
               handleCheckboxChange={handleCheckboxChange}
               checkedIds={checkedIds}
-              // selectedColor={selectedColor}
-              // setSelectedColor={setSelectedColor}
               selectedColorChange={selectedColorChange}
               selectedColorBoxArray={selectedColorBoxArray}
+              handleClick={handleClick}
+              handleChange={handleChange}
+              input={input}
             />
           </div>
-          <div className="footer">
-            <div className="box">
-              <span>Actions</span>
-              <button
-                className="actionsButton"
-                onClick={handleMarkAllCompleted}
-              >
-                Mark All Completed
-              </button>
-              <button className="actionsButton" onClick={handleClearCompleted}>
-                Clear completed
-              </button>
-            </div>
-            <div className="box2">
-              <span>Remaining Todos</span>
-            </div>
-            <div className="box3">
-              <span>Filter by Status</span>
-              <button className="statusButton">All</button>
-              <button className="statusButton">Active</button>
-              <button className="statusButton">Completed</button>
-            </div>
-            <div className="box4">
-              <span>Filter by Color</span>
-              <label>
-                <input
-                  type="checkbox"
-                  style={{ marginRight: "10px" }}
-                  onChange={boxSelected}
-                  value="green"
-                />
-                <span style={{ color: "green" }}>Green</span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  style={{ marginRight: "10px" }}
-                  onChange={boxSelected}
-                  value="red"
-                />
-                <span style={{ color: "red" }}>Red</span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  style={{ marginRight: "10px" }}
-                  onChange={boxSelected}
-                  value="blue"
-                />
-                <span style={{ color: "blue" }}>Bule</span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  style={{ marginRight: "10px" }}
-                  onChange={boxSelected}
-                  value="orange"
-                />
-                <span style={{ color: "orange" }}>Orange</span>
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  style={{ marginRight: "10px" }}
-                  onChange={boxSelected}
-                  value="purple"
-                />
-                <span style={{ color: "purple" }}>Purple</span>
-              </label>
-            </div>
-          </div>
+
+          <Footer
+            boxSelected={boxSelected}
+            handleMarkAllCompleted={handleMarkAllCompleted}
+            handleClearCompleted={handleClearCompleted}
+          />
         </div>
       </div>
     </div>
