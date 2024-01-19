@@ -7,8 +7,6 @@ const Footer = ({
   handleClearCompleted,
   setFilterByStatus,
 }) => {
-  
-
   return (
     <div className="footer">
       <div className="box">
@@ -22,6 +20,7 @@ const Footer = ({
       </div>
       <div className="box2">
         <span>Remaining Todos</span>
+        {/*  here the count of the active number will display*/}
       </div>
       <div className="box3">
         <span>Filter by Status</span>
