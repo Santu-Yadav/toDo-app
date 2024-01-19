@@ -10,6 +10,7 @@ const MainBody = ({
   handleClick,
   handleChange,
   input,
+  filterByStatus,
 }) => {
   return (
     <div className="upper-body">
@@ -29,6 +30,7 @@ const MainBody = ({
         checkedIds={checkedIds}
         selectedColorChange={selectedColorChange}
         selectedColorBoxArray={selectedColorBoxArray}
+        filterByStatus={filterByStatus}
       />
     </div>
   );

@@ -10,6 +10,7 @@ function App() {
   const [dataArray, setDataArray] = useState([]);
   const [checkedIds, setCheckedIds] = useState([]);
   const [selectedColorBoxArray, setSelectedColorBoxArray] = useState([]);
+  const [filterByStatus, setFilterByStatus] = useState("all");
 
   const handleChange = (e) => {
     const uniqueIdentifier = `${Date.now()}_${Math.random()}`;
@@ -96,12 +97,14 @@ function App() {
             handleClick={handleClick}
             handleChange={handleChange}
             input={input}
+            filterByStatus={filterByStatus}
           />
 
           <Footer
             boxSelected={boxSelected}
             handleMarkAllCompleted={handleMarkAllCompleted}
             handleClearCompleted={handleClearCompleted}
+            setFilterByStatus={setFilterByStatus}
           />
         </div>
       </div>

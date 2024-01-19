@@ -1,16 +1,13 @@
 import FilterByColor from "./components/filterByColor";
+import RadioInputGroup from "./components/radioInputGroup";
 
 const Footer = ({
   boxSelected,
   handleMarkAllCompleted,
   handleClearCompleted,
+  setFilterByStatus,
 }) => {
-  //****************************************
-  const onValueChangeRadio = (e) => {
-    console.log("footer - radio button", e);
-  };
-
-  //****************************************
+  
 
   return (
     <div className="footer">
@@ -28,39 +25,20 @@ const Footer = ({
       </div>
       <div className="box3">
         <span>Filter by Status</span>
-        {/* <button className="statusButton">All</button>
-        <button className="statusButton">Active</button>
-        <button className="statusButton">Completed</button> */}
-        <label className="statusButton">
-          <input
-            type="radio"
-            name="myRadio"
-            className="radio-filterByStatus"
-            onChange={onValueChangeRadio}
-            value="all"
-          />
-          All
-        </label>
-        <label className="statusButton">
-          <input
-            type="radio"
-            name="myRadio"
-            className="radio-filterByStatus"
-            onChange={onValueChangeRadio}
-            value="active"
-          />
-          Active
-        </label>
-        <label className="statusButton">
-          <input
-            type="radio"
-            name="myRadio"
-            className="radio-filterByStatus"
-            onChange={onValueChangeRadio}
-            value="completed"
-          />
-          Completed
-        </label>
+
+        {[
+          { labelName: "All", value: "all" },
+          { labelName: "Active", value: "active" },
+          { labelName: "Completed", value: "completed" },
+        ].map((item) => {
+          return (
+            <RadioInputGroup
+              labelName={item.labelName}
+              inputValue={item.value}
+              setFilterByStatus={setFilterByStatus}
+            />
+          );
+        })}
       </div>
       <div className="box4">
         <span>Filter by Color</span>

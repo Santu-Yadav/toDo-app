@@ -7,6 +7,7 @@ const RenderList = ({
   checkedIds,
   selectedColorChange,
   selectedColorBoxArray,
+  filterByStatus,
 }) => {
   return (
     <div>
@@ -14,18 +15,13 @@ const RenderList = ({
         if (
           selectedColorBoxArray.length !== 0 &&
           !selectedColorBoxArray.includes(item.color)
-        ) {
+        )
           return;
-        }
 
-        /* if (condition) {
-1. like above if check the selected radio button. 
-2. if it is all - don't do anything.
-3. active, then cross verify with checked array. All only allow row to be painted which is not available in the checked array.
-4. completed, then allow rows which is available in the checked array
+        if (filterByStatus === "completed" && !checkedIds.includes(item.id))
+          return;
 
-
-        } */
+        if (filterByStatus === "active" && checkedIds.includes(item.id)) return;
 
         {
           return (
