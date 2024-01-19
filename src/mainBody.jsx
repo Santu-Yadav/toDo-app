@@ -12,7 +12,7 @@ const MainBody = ({
   input,
 }) => {
   return (
-    <div>
+    <div className="upper-body">
       <input
         className="upper-body-input"
         placeholder="What needs to be done?"

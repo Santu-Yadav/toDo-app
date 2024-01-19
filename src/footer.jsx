@@ -5,6 +5,13 @@ const Footer = ({
   handleMarkAllCompleted,
   handleClearCompleted,
 }) => {
+  //****************************************
+  const onValueChangeRadio = (e) => {
+    console.log("footer - radio button", e);
+  };
+
+  //****************************************
+
   return (
     <div className="footer">
       <div className="box">
@@ -21,9 +28,39 @@ const Footer = ({
       </div>
       <div className="box3">
         <span>Filter by Status</span>
-        <button className="statusButton">All</button>
+        {/* <button className="statusButton">All</button>
         <button className="statusButton">Active</button>
-        <button className="statusButton">Completed</button>
+        <button className="statusButton">Completed</button> */}
+        <label className="statusButton">
+          <input
+            type="radio"
+            name="myRadio"
+            className="radio-filterByStatus"
+            onChange={onValueChangeRadio}
+            value="all"
+          />
+          All
+        </label>
+        <label className="statusButton">
+          <input
+            type="radio"
+            name="myRadio"
+            className="radio-filterByStatus"
+            onChange={onValueChangeRadio}
+            value="active"
+          />
+          Active
+        </label>
+        <label className="statusButton">
+          <input
+            type="radio"
+            name="myRadio"
+            className="radio-filterByStatus"
+            onChange={onValueChangeRadio}
+            value="completed"
+          />
+          Completed
+        </label>
       </div>
       <div className="box4">
         <span>Filter by Color</span>

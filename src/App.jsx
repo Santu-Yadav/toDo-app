@@ -59,7 +59,6 @@ function App() {
     );
   };
 
-  /* Do this later, select the color and add segregate the data based on the color selected*/
   const selectedColorChange = (event, item) => {
     setDataArray(
       dataArray.map((element) =>
@@ -83,23 +82,21 @@ function App() {
 
   return (
     <div className="appContainer">
-      <header className="header">Redux Fundamentals Example</header>
+      <header className="header">useState Fundamentals Example</header>
       <div className="body">
         <p className="body-p">Todos</p>
         <div className="body-dashboard">
-          <div className="upper-body">
-            <MainBody
-              dataArray={dataArray}
-              handleDelete={handleDelete}
-              handleCheckboxChange={handleCheckboxChange}
-              checkedIds={checkedIds}
-              selectedColorChange={selectedColorChange}
-              selectedColorBoxArray={selectedColorBoxArray}
-              handleClick={handleClick}
-              handleChange={handleChange}
-              input={input}
-            />
-          </div>
+          <MainBody
+            dataArray={dataArray}
+            handleDelete={handleDelete}
+            handleCheckboxChange={handleCheckboxChange}
+            checkedIds={checkedIds}
+            selectedColorChange={selectedColorChange}
+            selectedColorBoxArray={selectedColorBoxArray}
+            handleClick={handleClick}
+            handleChange={handleChange}
+            input={input}
+          />
 
           <Footer
             boxSelected={boxSelected}
