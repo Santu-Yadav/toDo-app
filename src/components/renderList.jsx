@@ -1,5 +1,3 @@
-import "./renderList.css";
-
 const RenderList = ({
   dataArray,
   handleDelete,
@@ -43,6 +41,7 @@ const RenderList = ({
                     value={item.color}
                     onChange={(event) => selectedColorChange(event, item)}
                     className="selectClass"
+                    style={{ color: item.color }}
                   >
                     <option value="selectColor">Select color:</option>
                     <option

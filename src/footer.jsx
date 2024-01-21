@@ -22,7 +22,7 @@ const Footer = ({
       </div>
       <div className="box2">
         <span>Remaining Todos</span>
-        {/*  here the count of the active number will display*/}
+        {/* calculation of remaining todo  */}
         {dataArray.length - checkedIds.length}
       </div>
       <div className="box3">
