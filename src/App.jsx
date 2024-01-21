@@ -105,6 +105,8 @@ function App() {
             handleMarkAllCompleted={handleMarkAllCompleted}
             handleClearCompleted={handleClearCompleted}
             setFilterByStatus={setFilterByStatus}
+            dataArray={dataArray}
+            checkedIds={checkedIds}
           />
         </div>
       </div>

@@ -6,6 +6,8 @@ const Footer = ({
   handleMarkAllCompleted,
   handleClearCompleted,
   setFilterByStatus,
+  dataArray,
+  checkedIds,
 }) => {
   return (
     <div className="footer">
@@ -21,6 +23,7 @@ const Footer = ({
       <div className="box2">
         <span>Remaining Todos</span>
         {/*  here the count of the active number will display*/}
+        {dataArray.length - checkedIds.length}
       </div>
       <div className="box3">
         <span>Filter by Status</span>
