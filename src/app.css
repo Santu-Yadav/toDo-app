@@ -89,6 +89,8 @@
 
 .upper-body {
   height: 18rem;
+  max-height: 18rem;
+  overflow: auto;
 }
 
 .upper-body-input {
