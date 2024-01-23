@@ -83,8 +83,9 @@ function App() {
   };
 
   const editTask = (item) => {
+    console.log("edit rask onClick #", item);
     setEditTaskArray((prev) => [...prev, item.id]);
-    
+
     /* data array holds array of objects. I need to edit the value of the matching id. */
     /* const filteredElement = dataArray.find(
       (eachElement) => eachElement.id === item.id
@@ -115,6 +116,7 @@ function App() {
             handleChange={handleChange}
             input={input}
             filterByStatus={filterByStatus}
+            editTaskArray={editTaskArray}
             editTask={editTask}
           />
 

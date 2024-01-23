@@ -10,10 +10,11 @@ const RenderList = ({
   selectedColorChange,
   selectedColorBoxArray,
   filterByStatus,
-  editTask,
+  editTaskArray,
   input,
   handleChange,
   handleClick,
+  editTask,
 }) => {
   return (
     <div>
@@ -29,16 +30,16 @@ const RenderList = ({
 
         if (filterByStatus === "active" && checkedIds.includes(item.id)) return;
 
-        // if (editTask.length !== 0) {
-        //   console.log("editTask ##", editTask);
-        //   return (
-        //     <InputUser
-        //       input={input}
-        //       handleChange={handleChange}
-        //       handleClick={handleClick}
-        //     />
-        //   );
-        // }
+        if (editTaskArray.length !== 0) {
+          console.log("editTaskArray ##", editTaskArray);
+          return (
+            <InputUser
+              input={input}
+              handleChange={handleChange}
+              handleClick={handleClick}
+            />
+          );
+        }
 
         {
           return (
