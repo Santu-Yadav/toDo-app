@@ -11,6 +11,7 @@ function App() {
   const [checkedIds, setCheckedIds] = useState([]);
   const [selectedColorBoxArray, setSelectedColorBoxArray] = useState([]);
   const [filterByStatus, setFilterByStatus] = useState("all");
+  const [editTaskArray, setEditTaskArray] = useState([]);
 
   const handleChange = (e) => {
     const uniqueIdentifier = `${Date.now()}_${Math.random()}`;
@@ -82,8 +83,10 @@ function App() {
   };
 
   const editTask = (item) => {
+    setEditTaskArray((prev) => [...prev, item.id]);
+    
     /* data array holds array of objects. I need to edit the value of the matching id. */
-    const filteredElement = dataArray.find(
+    /* const filteredElement = dataArray.find(
       (eachElement) => eachElement.id === item.id
     );
     console.log("filteredElement #", filteredElement);
@@ -92,7 +95,7 @@ function App() {
       (eachElement) => eachElement.id !== item.id
     );
 
-    // setDataArray([...restElement, {...filteredElement,value:}])
+     setDataArray([...restElement, {...filteredElement,value:}]) */
   };
 
   return (

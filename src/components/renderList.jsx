@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import InputUser from "./inputUser";
 
 const RenderList = ({
   dataArray,
@@ -10,6 +11,9 @@ const RenderList = ({
   selectedColorBoxArray,
   filterByStatus,
   editTask,
+  input,
+  handleChange,
+  handleClick,
 }) => {
   return (
     <div>
@@ -24,6 +28,17 @@ const RenderList = ({
           return;
 
         if (filterByStatus === "active" && checkedIds.includes(item.id)) return;
+
+        // if (editTask.length !== 0) {
+        //   console.log("editTask ##", editTask);
+        //   return (
+        //     <InputUser
+        //       input={input}
+        //       handleChange={handleChange}
+        //       handleClick={handleClick}
+        //     />
+        //   );
+        // }
 
         {
           return (

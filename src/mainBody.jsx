@@ -1,3 +1,4 @@
+import InputUser from "./components/inputUser";
 import RenderList from "./components/renderList";
 
 const MainBody = ({
@@ -15,16 +16,13 @@ const MainBody = ({
 }) => {
   return (
     <div className="upper-body">
-      <input
-        className="upper-body-input"
-        placeholder="What is the task today?"
-        value={input.value || " "}
-        onChange={handleChange}
+      <InputUser
+        input={input}
+        handleChange={handleChange}
+        handleClick={handleClick}
       />
-      <button className="addButton" onClick={handleClick}>
-        submit
-      </button>
       <RenderList
+        input={input}
         dataArray={dataArray}
         handleDelete={handleDelete}
         handleCheckboxChange={handleCheckboxChange}
@@ -33,6 +31,8 @@ const MainBody = ({
         selectedColorBoxArray={selectedColorBoxArray}
         filterByStatus={filterByStatus}
         editTask={editTask}
+        handleChange={handleChange}
+        handleClick={handleClick}
       />
     </div>
   );
