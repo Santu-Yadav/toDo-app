@@ -81,6 +81,20 @@ function App() {
     console.log("selectedColorBoxArray", selectedColorBoxArray);
   };
 
+  const editTask = (item) => {
+    /* data array holds array of objects. I need to edit the value of the matching id. */
+    const filteredElement = dataArray.find(
+      (eachElement) => eachElement.id === item.id
+    );
+    console.log("filteredElement #", filteredElement);
+
+    const restElement = dataArray.filter(
+      (eachElement) => eachElement.id !== item.id
+    );
+
+    // setDataArray([...restElement, {...filteredElement,value:}])
+  };
+
   return (
     <div className="appContainer">
       <header className="header">useState Fundamentals Example</header>
@@ -98,6 +112,7 @@ function App() {
             handleChange={handleChange}
             input={input}
             filterByStatus={filterByStatus}
+            editTask={editTask}
           />
 
           <Footer

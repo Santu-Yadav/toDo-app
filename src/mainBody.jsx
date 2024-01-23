@@ -11,12 +11,13 @@ const MainBody = ({
   handleChange,
   input,
   filterByStatus,
+  editTask,
 }) => {
   return (
     <div className="upper-body">
       <input
         className="upper-body-input"
-        placeholder="What needs to be done?"
+        placeholder="What is the task today?"
         value={input.value || " "}
         onChange={handleChange}
       />
@@ -31,6 +32,7 @@ const MainBody = ({
         selectedColorChange={selectedColorChange}
         selectedColorBoxArray={selectedColorBoxArray}
         filterByStatus={filterByStatus}
+        editTask={editTask}
       />
     </div>
   );

@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+
 const RenderList = ({
   dataArray,
   handleDelete,
@@ -6,6 +9,7 @@ const RenderList = ({
   selectedColorChange,
   selectedColorBoxArray,
   filterByStatus,
+  editTask,
 }) => {
   return (
     <div>
@@ -80,6 +84,10 @@ const RenderList = ({
                   </select>
                 </div>
               </div>
+              <FontAwesomeIcon
+                icon={faPenToSquare}
+                onClick={() => editTask(item)}
+              />
               <button onClick={() => handleDelete(item)}>Delete</button>
             </div>
           );
