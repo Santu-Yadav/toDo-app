@@ -12,6 +12,7 @@ function App() {
   const [selectedColorBoxArray, setSelectedColorBoxArray] = useState([]);
   const [filterByStatus, setFilterByStatus] = useState("all");
   const [editTaskArray, setEditTaskArray] = useState([]);
+  const [editTaskIndicator, setEditTaskIndicator] = useState(false);
 
   const handleChange = (e) => {
     const uniqueIdentifier = `${Date.now()}_${Math.random()}`;
@@ -84,6 +85,7 @@ function App() {
 
   const editTask = (item) => {
     console.log("edit rask onClick #", item);
+    setEditTaskIndicator(true);
     setEditTaskArray((prev) => [...prev, item.id]);
 
     /* data array holds array of objects. I need to edit the value of the matching id. */
@@ -118,6 +120,8 @@ function App() {
             filterByStatus={filterByStatus}
             editTaskArray={editTaskArray}
             editTask={editTask}
+            editTaskIndicator={editTaskIndicator}
+            setEditTaskIndicator={setEditTaskIndicator}
           />
 
           <Footer

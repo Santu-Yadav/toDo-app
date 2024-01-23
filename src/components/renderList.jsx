@@ -12,10 +12,18 @@ const RenderList = ({
   filterByStatus,
   editTaskArray,
   input,
-  handleChange,
-  handleClick,
+  // handleChange,
+  // handleClick,
   editTask,
+  editTaskIndicator,
+  setEditTaskIndicator,
 }) => {
+  const handleChangeEdit = () => {
+    
+  };
+
+  const handleClickEdit = () => {};
+
   return (
     <div>
       {dataArray.map((item) => {
@@ -35,8 +43,8 @@ const RenderList = ({
           return (
             <InputUser
               input={input}
-              handleChange={handleChange}
-              handleClick={handleClick}
+              handleChange={handleChangeEdit}
+              handleClick={handleClickEdit}
             />
           );
         }

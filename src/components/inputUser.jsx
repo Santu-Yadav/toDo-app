@@ -3,7 +3,6 @@ const InputUser = ({ input, handleChange, handleClick }) => {
     <div>
       <input
         className="upper-body-input"
-        placeholder="What is the task today?"
         value={input.value || " "}
         onChange={handleChange}
       />

@@ -14,6 +14,8 @@ const MainBody = ({
   filterByStatus,
   editTaskArray,
   editTask,
+  editTaskIndicator,
+  setEditTaskIndicator,
 }) => {
   return (
     <div className="upper-body">
@@ -35,6 +37,8 @@ const MainBody = ({
         handleChange={handleChange}
         handleClick={handleClick}
         editTask={editTask}
+        editTaskIndicator={editTaskIndicator}
+        setEditTaskIndicator={setEditTaskIndicator}
       />
     </div>
   );
