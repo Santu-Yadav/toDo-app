@@ -11,8 +11,6 @@ function App() {
   const [checkedIds, setCheckedIds] = useState([]);
   const [selectedColorBoxArray, setSelectedColorBoxArray] = useState([]);
   const [filterByStatus, setFilterByStatus] = useState("all");
-  const [editTaskArray, setEditTaskArray] = useState([]);
-  const [editTaskIndicator, setEditTaskIndicator] = useState(false);
 
   const handleChange = (e) => {
     const uniqueIdentifier = `${Date.now()}_${Math.random()}`;
@@ -87,6 +85,7 @@ function App() {
   const editTask = (item) => {
     console.log("editTask icon onClick #", item);
     //******************************************************* */
+
     setDataArray(
       dataArray.map((element) =>
         element.id === item.id
@@ -94,6 +93,7 @@ function App() {
           : { ...element }
       )
     );
+
     //******************************************************* */
     // setEditTaskArray((prev) => [...prev, item.id]);
 
@@ -128,10 +128,7 @@ function App() {
             handleChange={handleChange}
             input={input}
             filterByStatus={filterByStatus}
-            editTaskArray={editTaskArray}
             editTask={editTask}
-            editTaskIndicator={editTaskIndicator}
-            setEditTaskIndicator={setEditTaskIndicator}
           />
 
           <Footer

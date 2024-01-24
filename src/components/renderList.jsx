@@ -11,13 +11,7 @@ const RenderList = ({
   selectedColorChange,
   selectedColorBoxArray,
   filterByStatus,
-  editTaskArray,
-  input,
-  // handleChange,
-  // handleClick,
   editTask,
-  editTaskIndicator,
-  setEditTaskIndicator,
 }) => {
   const handleChangeEdit = (receivedItem, e) => {
     console.log("received Item @@", receivedItem);
@@ -59,12 +53,7 @@ const RenderList = ({
 
         if (filterByStatus === "active" && checkedIds.includes(item.id)) return;
 
-        if (
-          // editTaskArray.length !== 0 &&
-          // editTaskArray.includes(item.id) &&
-          item.editIndicator
-        ) {
-          console.log("editTaskArray ##", editTaskArray);
+        if (item.editIndicator) {
           return (
             <InputUser
               input={item}

@@ -12,10 +12,8 @@ const MainBody = ({
   handleChange,
   input,
   filterByStatus,
-  editTaskArray,
   editTask,
-  editTaskIndicator,
-  setEditTaskIndicator,
+
   setDataArray,
 }) => {
   return (
@@ -35,12 +33,9 @@ const MainBody = ({
         selectedColorChange={selectedColorChange}
         selectedColorBoxArray={selectedColorBoxArray}
         filterByStatus={filterByStatus}
-        editTaskArray={editTaskArray}
         handleChange={handleChange}
         handleClick={handleClick}
         editTask={editTask}
-        editTaskIndicator={editTaskIndicator}
-        setEditTaskIndicator={setEditTaskIndicator}
       />
     </div>
   );
