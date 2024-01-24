@@ -16,6 +16,7 @@ const MainBody = ({
   editTask,
   editTaskIndicator,
   setEditTaskIndicator,
+  setDataArray,
 }) => {
   return (
     <div className="upper-body">
@@ -27,6 +28,7 @@ const MainBody = ({
       <RenderList
         input={input}
         dataArray={dataArray}
+        setDataArray={setDataArray}
         handleDelete={handleDelete}
         handleCheckboxChange={handleCheckboxChange}
         checkedIds={checkedIds}

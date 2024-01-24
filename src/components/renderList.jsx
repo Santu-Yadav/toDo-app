@@ -4,6 +4,7 @@ import InputUser from "./inputUser";
 
 const RenderList = ({
   dataArray,
+  setDataArray,
   handleDelete,
   handleCheckboxChange,
   checkedIds,
@@ -18,11 +19,21 @@ const RenderList = ({
   editTaskIndicator,
   setEditTaskIndicator,
 }) => {
-  const handleChangeEdit = () => {
-    
+  const handleChangeEdit = (receivedItem, e) => {
+    console.log("received Item @@", receivedItem);
+    console.log("received event @@", e);
+    // const editItem = { ...receivedItem };
   };
 
-  const handleClickEdit = () => {};
+  const handleClickEdit = (receivedItem) => {
+    setDataArray(
+      dataArray.map((element) =>
+        element.id === receivedItem.id
+          ? { ...element, editIndicator: false }
+          : { ...element }
+      )
+    );
+  };
 
   return (
     <div>
@@ -38,13 +49,17 @@ const RenderList = ({
 
         if (filterByStatus === "active" && checkedIds.includes(item.id)) return;
 
-        if (editTaskArray.length !== 0) {
+        if (
+          // editTaskArray.length !== 0 &&
+          // editTaskArray.includes(item.id) &&
+          item.editIndicator
+        ) {
           console.log("editTaskArray ##", editTaskArray);
           return (
             <InputUser
-              input={input}
-              handleChange={handleChangeEdit}
-              handleClick={handleClickEdit}
+              input={item}
+              handleChange={(e) => handleChangeEdit(item, e)}
+              handleClick={() => handleClickEdit(item)}
             />
           );
         }

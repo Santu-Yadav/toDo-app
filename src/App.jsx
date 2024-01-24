@@ -22,6 +22,7 @@ function App() {
       id: uniqueIdentifier,
       value: e.target.value,
       color: "no color",
+      editIndicator: false,
     });
   };
 
@@ -84,9 +85,17 @@ function App() {
   };
 
   const editTask = (item) => {
-    console.log("edit rask onClick #", item);
-    setEditTaskIndicator(true);
-    setEditTaskArray((prev) => [...prev, item.id]);
+    console.log("editTask icon onClick #", item);
+    //******************************************************* */
+    setDataArray(
+      dataArray.map((element) =>
+        element.id === item.id
+          ? { ...element, editIndicator: true }
+          : { ...element }
+      )
+    );
+    //******************************************************* */
+    // setEditTaskArray((prev) => [...prev, item.id]);
 
     /* data array holds array of objects. I need to edit the value of the matching id. */
     /* const filteredElement = dataArray.find(
@@ -109,6 +118,7 @@ function App() {
         <div className="body-dashboard">
           <MainBody
             dataArray={dataArray}
+            setDataArray={setDataArray}
             handleDelete={handleDelete}
             handleCheckboxChange={handleCheckboxChange}
             checkedIds={checkedIds}
