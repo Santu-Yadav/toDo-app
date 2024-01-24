@@ -22,6 +22,16 @@ const RenderList = ({
   const handleChangeEdit = (receivedItem, e) => {
     console.log("received Item @@", receivedItem);
     console.log("received event @@", e);
+    setDataArray(
+      dataArray.map((element) =>
+        element.id === receivedItem.id
+          ? {
+              ...element,
+              value: e.target.value,
+            }
+          : { ...element }
+      )
+    );
     // const editItem = { ...receivedItem };
   };
 
